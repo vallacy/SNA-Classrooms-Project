@@ -29,3 +29,51 @@ summary(lab1.model1)
 We found that students were not very well-connected within their lab sections and these sparse networks resulted in a lack of association between students' connections and their levels of stress, anxiety, depression, grit, and/or resilience. A few labs were more well-connected and findings from those labs suggest that students may connect with other students who have similar levels of resilience and/or dissimilar levels of grit.
 
 ![network graph of student's connections in lab 2](Grit_plot.jpeg)
+
+Code to create above plot:
+~~~ R
+########################
+## Grit Network Graph ##
+########################
+
+#load library
+library(RColorBrewer)
+
+#generate color gradient starting at red and ending at blue
+colfunc <- colorRampPalette(c("red", "blue"))
+colfunc(18)
+
+#plot gradient to check colors
+plot(rep(1,18),col=colfunc(18),pch=19,cex=3)
+
+#assign generated colors to object 'colors'
+colors <- c("#FF0000", "#F0000F", "#E1001E", "#D2002C", "#C3003C", 
+            "#B3004B", "#A50059", "#960069", "#870078", "#780087", 
+            "#690096", "#5900A5", "#4B00B3", "#3C00C3", "#2D00D2",
+            "#1E00E1", "#0F00F0", "#0000FF")
+
+#color the nodes based on level of Grit using generated color gradient
+V(net.l2.t3)$color <- colors[V(net.l2.t3)$Grit]
+
+#compute node degree
+deg <- degree(net.l2.t3, mode="all")
+
+#set node size based on degree
+V(net.l2.t3)$size <- deg*3
+
+#default labels are node ids, set them to NA
+V(net.l2.t3)$label <- NA
+
+#change default arrow size and set edge color to be gray
+E(net.l2.t3)$arrow.size <- .2
+E(net.l2.t3)$edge.color <- "gray80"
+
+#set layout of graph using Fruchterman-Reingold layout algorithm
+l <- layout_with_fr(net.l2.t3)
+
+#rescale graph
+l <- norm_coords(l, ymin=-0.95, ymax=0.95, xmin=-0.95, xmax=0.95)
+
+#plot the network graph
+plot(net.l2.t3, rescale=FALSE, layout=l*1.5)
+~~~
