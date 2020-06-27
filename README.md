@@ -28,6 +28,8 @@ summary(lab1.model1)
 ## Results
 We found that students were not very well-connected within their lab sections and these sparse networks resulted in a lack of association between students' connections and their levels of stress, anxiety, depression, grit, and/or resilience. A few labs were more well-connected and findings from those labs suggest that students may connect with other students who have similar levels of resilience and/or dissimilar levels of grit.
 
+Below is a plot of the student network in lab 2. Colors indicate a student's score on the grit scale: red indicates a low score, blue indicates a high score, and purple is an in-between score. Node size is based on degree, i.e., how many connections a student has in the lab. The more connections, the larger the node.
+
 ![network graph of student's connections in lab 2](Grit_plot.jpeg)
 
 Code to create above plot:
