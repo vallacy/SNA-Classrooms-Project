@@ -27,3 +27,5 @@ summary(lab1.model1)
 
 ## Results
 We found that students were not very well-connected within their lab sections and these sparse networks resulted in a lack of association between students' connections and their levels of stress, anxiety, depression, grit, and/or resilience. A few labs were more well-connected and findings from those labs suggest that students may connect with other students who have similar levels of resilience and/or dissimilar levels of grit.
+
+![network graph of student's connections in lab 2](Grit plot.jpeg)
