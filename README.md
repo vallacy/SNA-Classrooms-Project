@@ -1,7 +1,7 @@
 # Social Network Analysis (SNA) in Introductory Statistics Classrooms Project
 
 ## Project Description
-I led a team of researchers to collect and analyze data on students' connections with one another in introductory psychology statistics classes to see whether classroom connectedness within the lab section of psychology statistics courses was associated with students' levels of grit, and/or resilience.
+I led a team of researchers to collect and analyze data on students' connections with one another in introductory psychology statistics classes to see whether classroom connectedness within the lab section of psychology statistics courses was associated with students' levels of grit and/or resilience.
 
 We collected data at the end of the semester. Students were given a link to complete a survey via Google Forms and completed it on their own time.
 
@@ -11,7 +11,7 @@ We created a social network survey, asking students 1) how they knew each of the
 
 ## Analyses
 
-I used exponential random graph models (ERGMs) to investigate the association between students' connectedness and their levels of grit, and resilience. Networks were fairly sparse, with only one, relatively well-connected lab having a density of 0.10.
+I used exponential random graph models (ERGMs) to investigate the association between students' connectedness and their levels of grit and resilience. Networks were fairly sparse, with only one, relatively well-connected lab having a density of 0.10.
 
 Example code for an ERGM looking at a difference in scores on the measures:
 ~~~ R
@@ -24,7 +24,7 @@ summary(lab1.model1)
 ~~~
 
 ## Results
-We found that students were not very well-connected within their lab sections and these sparse networks resulted in a lack of association between students' connections and their levels of grit, and resilience. One lab was more well-connected than the others and findings from that lab suggest that students may connect with other students who have similar levels of resilience and/or dissimilar levels of grit.
+We found that students were not very well-connected within their lab sections and these sparse networks resulted in a lack of association between students' connections and their levels of grit and resilience. One lab was more well-connected than the others and findings from that lab suggest that students may connect with other students who have similar levels of resilience and/or dissimilar levels of grit.
 
 Below is a plot of the student network in lab 2, the well-connected lab. Colors indicate a student's score on the grit scale: red indicates a low score, blue indicates a high score, and purple is an in-between score. Node size is based on degree, i.e., how many connections a student has in the lab. The more connections, the larger the node.
 
